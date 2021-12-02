@@ -1,6 +1,6 @@
 
 #
-# Python:   3.9.6
+# Python:   3.8.0
 #
 # Author:   Nathan J. Crawford
 #
@@ -17,7 +17,7 @@
 
 import winsound
 
-winsound.PlaySound('Tada-sound.wav',winsound.SND_FILENAME)
+winsound.PlaySound(r'C:\Users\natec\OneDrive\Documents\GitHub\Python-Projects\tutorials\tada-sound.zip',winsound.SND_FILENAME)
 
 
 
@@ -39,7 +39,7 @@ def describe_game(name):
     # meaning, if we do not already have this user's name,
     # then they are a new player and we need to get their name.
     if name != "":
-        print("\nThank you for playing again, {}!".format.capitalize())
+        print("\nThank you for playing again, {}!".capitalize())
     else:
         stop = True
         while stop: # or you can code [ while stop == True ]
