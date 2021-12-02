@@ -15,6 +15,10 @@
 
 
 
+import winsound
+
+winsound.PlaySound('Tada-sound.wav',winsound.SND_FILENAME)
+
 
 
 def start(nice=0,mean=0,name=""):
@@ -22,6 +26,7 @@ def start(nice=0,mean=0,name=""):
     name = describe_game(name)
     nice,mean,name = nice_mean(nice,mean,name)
 
+    
 
 
 def describe_game(name):
@@ -107,7 +112,7 @@ def lose(nice,mean,name):
 def again(nice,mean,name):
     stop = True
     while stop:
-        choice = input("\nDo you want to play again? (y/n):\n>>> ").format.lower()
+        choice = input("\nDo you want to play again? (y/n):\n>>> ").lower()
         if choice == "y":
             stop = False
             reset(nice,mean,name)
@@ -133,3 +138,11 @@ def reset(nice,mean,name):
 
 if __name__ == "__main__":
     start()
+
+
+
+
+
+
+
+
