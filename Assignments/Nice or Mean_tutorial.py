@@ -17,7 +17,7 @@
 
 import winsound
 
-winsound.PlaySound(r'C:\Users\natec\OneDrive\Documents\GitHub\Python-Projects\tutorials\tada-sound.zip',winsound.SND_FILENAME)
+winsound.PlaySound('C:/Users/natec/OneDrive/Documents/GitHub/Python-Projects/Assignments/Tada-sound.wav',winsound.SND_FILENAME)
 
 
 
