@@ -1,6 +1,6 @@
 
 
-#parent class
+#parent class Computers
 class Computers:
     CPU = True
     connects_internet = True
