@@ -22,7 +22,7 @@ class ParentWindow(Frame):
         Defining widgets and their initial configuration,
         and placing them using grid geometry.
         """ 
-        self.label = Label(self.master, text= "Enter text here.")
+        self.label = Label(self.master, text= "Enter text below.")
         self.label.grid(row= 1, column= 3, columnspan= 3, padx= (30, 0), pady= (30, 0))
         
         self.text = Entry(self.master, text= self.source, font= ('Helvetica', 14), fg= 'black', bg= 'lightgrey')
