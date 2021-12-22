@@ -1,6 +1,7 @@
 
 
 import os
+import webbrowser
 from tkinter import *
 import tkinter as tk
 
@@ -16,6 +17,21 @@ def center_window(self, w, h):
     y = int((screen_height/2) - (h/2))
     centerGeo = self.master.geometry('{}x{}+{}+{}'.format(w, h, x, y))
     return centerGeo
+
+def open(self):
+    file_html = open('index.html', 'w')
+    html_template = """
+    <html>
+        <body>
+            <h1 input("")
+            </h1>
+        </body>
+    </html>
+    """
+    file_html.write(html_template)
+    file_html.close()
+    webbrowser.open('index.html')
+    
 
 def ask_quit(self):
     if messagebox.askokcancel("Exit program", "Okay to exit application?"):
