@@ -25,3 +25,4 @@ def last_mod(fname):
 
 
 if __name__ == '__main__':
+    pass
