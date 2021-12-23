@@ -23,14 +23,5 @@ def last_mod(fname):
             dst_fname = os.path.join(destination, fname)
             shutil.move(src_fname+1, dst_fname)
 
-    fname = shutil.move(src_fname, dst_fname)
 
 if __name__ == '__main__':
-    App = last_mod(fname)
-    last_mod.src_fname
-  
-    
-    
-   
-    
-    
