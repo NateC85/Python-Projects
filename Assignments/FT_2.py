@@ -24,9 +24,12 @@ def last_mod(fname):
         if last_mod(src_fname) > before:
             dst_fname = os.path.join(destination, fname)
             shutil.copy(src_fname+i, dst_fname)
-
+            shutil.move(src_fname+i, dst_fname)
+            
         return os.path.getmtime(fname)
 
         
 if __name__ == '__main__':
-    pass
+    copy = last_mod(fname)
+    last_mod.fname
+    move = last_mod(fname)
