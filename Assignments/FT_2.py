@@ -15,7 +15,7 @@ destination = '/Users/natec/OneDrive/Desktop/Folder_D/'
 now = time.time()
 before = now - seconds_in_day
 
-
+# Defining a function that checks for recently modified files
 def last_mod(fname):
     
     for fname in os.listdir(src):
@@ -23,10 +23,10 @@ def last_mod(fname):
 
         if last_mod(src_fname) > before:
             dst_fname = os.path.join(destination, fname)
-            shutil.move(src_fname+i, dst_fname)
+            shutil.copy(src_fname+i, dst_fname)
 
         return os.path.getmtime(fname)
 
-
+        
 if __name__ == '__main__':
     pass
