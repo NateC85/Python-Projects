@@ -30,6 +30,4 @@ def last_mod(fname):
 
         
 if __name__ == '__main__':
-    copy = last_mod(fname)
-    last_mod.fname
-    move = last_mod(fname)
+    pass
