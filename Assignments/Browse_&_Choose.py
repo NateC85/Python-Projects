@@ -11,7 +11,7 @@ main_win.geometry("500x300")
 main_win.sourceFolder = ''
 main_win.sourceFile = ''
 
-
+# Defining a function to browse and choose a specific folder that will contain files to be checked daily.
 def chooseDir():
     main_win.sourceFolder =  filedialog.askdirectory(parent=main_win, initialdir= "/", title='Please select a directory')
 
@@ -19,7 +19,7 @@ btn_chooseDir = tkinter.Button(main_win, text = "Chose Folder", width = 20, heig
 btn_chooseDir.grid(row= 1, column= 0, padx= (30, 0), pady= (30, 0))
 btn_chooseDir.width = 100
 
-
+# Defining a function to browse and choose a specific folder that will recieve copied files.
 def chooseFile():
     main_win.sourceFile = filedialog.askopenfilename(parent=main_win, initialdir= "/", title='Please select a directory')
 
@@ -31,12 +31,14 @@ btn_chooseFile.width = 100
 def FileCheck_btn():
     main_win.sourceFolder =  filedialog.askdirectory(parent=main_win, initialdir= "/", title='Please select a directory')
 
-btn_chooseDir = tkinter.Button(main_win, text = "Check for file.", width = 20, height = 3, command = chooseDir)
-btn_chooseDir.grid(row= 3, column= 0, padx= (30, 0), pady= (30, 0))
-btn_chooseDir.width = 100
-btn_chooseDir.text = Entry(main_win, text= 'filename', font= ('Helvetica', 12), fg= 'black', bg= 'white')
-btn_chooseDir.text.grid(row= 3, column= 2, padx= (30, 0), pady= (30, 0))
+btn_FileCheck_btn = tkinter.Button(main_win, text = "Check for file.", width = 20, height = 3, command = chooseDir)
+btn_FileCheck_btn.grid(row= 3, column= 0, padx= (30, 0), pady= (30, 0))
+btn_FileCheck_btn.width = 100
+btn_FileCheck_btn.text = Entry(main_win, text= 'filename', font= ('Helvetica', 12), fg= 'black', bg= 'white')
+btn_FileCheck_btn.text.grid(row= 3, column= 2, padx= (30, 0), pady= (30, 0))
     
+
+# Defining a function that allows user to manually initiate "filecheck" process.
 def FileCheck(fname):
         try:
             open(fname, 'r')
@@ -61,3 +63,4 @@ if __name__ == '__main__':
     main_win.mainloop()
     print(main_win.sourceFolder)
     print(main_win.sourceFile )
+    FileCheck_btn.FileCheck()
