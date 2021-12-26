@@ -26,7 +26,8 @@ def last_mod(fname):
             shutil.copy(src_fname+i, dst_fname)
             shutil.move(src_fname+i, dst_fname)
             
-        return os.path.getmtime(fname)
+
+    return os.path.getmtime(fname)
 
         
 if __name__ == '__main__':
