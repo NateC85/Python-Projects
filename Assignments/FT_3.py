@@ -38,23 +38,6 @@ btn_FileCheck_btn.text = Entry(main_win, text= 'filename', font= ('Helvetica', 1
 btn_FileCheck_btn.text.grid(row= 3, column= 2, padx= (30, 0), pady= (30, 0))
     
 
-# Defining a function that allows user to manually initiate "filecheck" process.
-def FileCheck(fname):
-        try:
-            open(fname, 'r')
-            return 1
-        except IOError:
-            print("Error: File does not exist.")
-            return 0
-
-loop = 'y'
-while loop == 'y':
-    filename = input("Enter the name of the file that you would like to process: ")
-    if FileCheck(filename) == 1:
-        loop = 'n'
-    else:
-        print("File not found.")
-
 
 
 
@@ -63,4 +46,3 @@ if __name__ == '__main__':
     main_win.mainloop()
     print(main_win.sourceFolder)
     print(main_win.sourceFile)
-    FileCheck()
