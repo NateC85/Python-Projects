@@ -34,7 +34,7 @@ class ParentWindow(Frame):
 # Defining a function to move the files that have been modified in the last 24 hours.
 def move_files(self):
     for fname in os.listdir():
-        self = [Entry].get(self.textField1)
+        fname = [self.textField1].get(fname)
         # Gets the absolute path of the source file.
         src_fname = os.path.join(chooseSrc, fname)
         # Get the modification time in the mtime format.
@@ -68,5 +68,6 @@ def chooseDest(self):
 # Calling funtions
 if __name__ == '__main__':
     root = Tk()
+    fname = move_files()
     move_files()
     root.mainloop()
