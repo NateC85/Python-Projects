@@ -30,9 +30,6 @@ class ParentWindow(Frame):
         self.master.title('File Transfer pt.3')
 
 
-        FT_3.load_gui(self)
-
-
 
 # Defining a function to move the files that have been modified in the last 24 hours.
 def move_files():
@@ -67,9 +64,8 @@ def chooseDest(self):
     self.textField2.insert(0, self.destFolder)
 
 
-# Calling funtion move_files()
+# Calling funtions
 if __name__ == '__main__':
     root = Tk()
-    App = ParentWindow(root) #This instantiates our own class as an App object
-    root.mainloop()
     move_files()
+    root.mainloop()
