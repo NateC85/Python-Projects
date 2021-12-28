@@ -1,9 +1,7 @@
 
 import tkinter
 from tkinter import *
-
 from tkinter import Entry, Label, StringVar, messagebox
-from tkinter import filedialog
 
 from FT_2 import chooseDest, chooseSrc, move_files
 

@@ -1,16 +1,16 @@
 
 
+
 import time
 import os
 import shutil
 import datetime
-from tkinter import Entry, messagebox
+from tkinter import Entry
 from tkinter import filedialog
 from tkinter import *
 import tkinter as tk
 
 
-import FT_3
 
 # Retreives current date and time
 now = datetime.datetime.now()
@@ -32,8 +32,9 @@ class ParentWindow(Frame):
 
 
 # Defining a function to move the files that have been modified in the last 24 hours.
-def move_files():
-    for fname in os.listdir(chooseSrc):
+def move_files(self):
+    for fname in os.listdir():
+        self = [Entry].get(self.textField1)
         # Gets the absolute path of the source file.
         src_fname = os.path.join(chooseSrc, fname)
         # Get the modification time in the mtime format.
