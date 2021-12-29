@@ -10,11 +10,10 @@ from tkinter import filedialog
 from tkinter import *
 import tkinter as tk
 
-
+import FT_3
 
 # Retreives current date and time
 now = datetime.datetime.now()
-
 # Using "timedelta to get the date and time 24 hours ago.
 # A way of creating a measurement of time in specific units(days, seconds, hours, weeks, etc.)
 before = now - datetime.timedelta(hours=24)
@@ -23,18 +22,20 @@ before = now - datetime.timedelta(hours=24)
 class ParentWindow(Frame):
     def __init__(self, master, *args, **kwargs):
         Frame.__init__(self, master, *args, **kwargs)
-
         # Master frame configuration
         self.master = master
-        self.master.geometry("{}x{}".format(500, 300))
+        self.master.geometry("{}x{}".format(500, 500))
         self.master.title('File Transfer pt.3')
+        
+        FT_3.load_gui(self);
+
 
 
 
 # Defining a function to move the files that have been modified in the last 24 hours.
 def move_files(self):
-    for fname in os.listdir():
-        fname = [self.textField1].get(fname)
+    files = os.listdir(chooseSrc(self))
+    for fname in files:
         # Gets the absolute path of the source file.
         src_fname = os.path.join(chooseSrc, fname)
         # Get the modification time in the mtime format.
@@ -45,7 +46,8 @@ def move_files(self):
 
         # Calling the last_mod() function to check if the file was modified
         # within the last 24 hours.
-        if move_files(src_fname) > before:
+        if chooseSrc(src_fname) < before:
+            chooseDest = os.path.join(src_fname, fname)
             # The shutil.move() method will move the file to the destination directory
             # if the file has been modified within the last 24 hours.
             shutil.move(src_fname, chooseDest)
@@ -68,6 +70,5 @@ def chooseDest(self):
 # Calling funtions
 if __name__ == '__main__':
     root = Tk()
-    fname = move_files()
-    move_files()
+    App = ParentWindow(root)
     root.mainloop()
