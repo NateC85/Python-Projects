@@ -24,7 +24,7 @@ class ParentWindow(Frame):
         Frame.__init__(self, master, *args, **kwargs)
         # Master frame configuration
         self.master = master
-        self.master.geometry("{}x{}".format(500, 500))
+        self.master.geometry("{}x{}".format(400, 300))
         self.master.title('File Transfer pt.3')
         
         FT_3.load_gui(self);
@@ -57,12 +57,12 @@ def move_files(self):
 
 
 
-
+# Defining a function to connect to the textfield1 button
 def chooseSrc(self):
     self.sourceFolder =  filedialog.askdirectory()
     self.textField1.insert(0, self.sourceFolder)
 
-
+# Defining a function to connect to the textfield1 button
 def chooseDest(self):
     self.destFolder =  filedialog.askdirectory()
     self.textField2.insert(0, self.destFolder)
@@ -70,6 +70,7 @@ def chooseDest(self):
 
 # Calling funtions
 if __name__ == '__main__':
-    root = Tk()
-    App = ParentWindow(root)
-    root.mainloop()
+    root = Tk()  #This Instantiates the Tk.() root frame (window) into being
+    App = ParentWindow(root) #This instantiates our own class as an App object
+    root.mainloop()# This ensures the Tkinter class object, our window, to keep looping
+                   # meaning, it will stay open until we instruct it to close
