@@ -17,7 +17,7 @@ now = datetime.datetime.now()
 # Using "timedelta to get the date and time 24 hours ago.
 # A way of creating a measurement of time in specific units(days, seconds, hours, weeks, etc.)
 before = now - datetime.timedelta(hours=24)
-
+print(before)
 
 class ParentWindow(Frame):
     def __init__(self, master, *args, **kwargs):
@@ -34,24 +34,25 @@ class ParentWindow(Frame):
 
 # Defining a function to move the files that have been modified in the last 24 hours.
 def move_files(self):
-    files = os.listdir(chooseSrc(self))
+    source = self.textField1.get()
+    destination = self.textField2.get()
+    files = os.listdir(source)
     for fname in files:
         # Gets the absolute path of the source file.
-        src_fname = os.path.join(chooseSrc, fname)
+        src_fname = os.path.join(source, fname)
         # Get the modification time in the mtime format.
         mtime = os.path.getmtime(fname)
         # Converts the mtime format to a proper datetime format.
         modtime = datetime.datetime.fromtimestamp(mtime)
-        # Reurns the modification time of the file.
-
+        
         # Calling the last_mod() function to check if the file was modified
         # within the last 24 hours.
-        if chooseSrc(src_fname) < before:
-            chooseDest = os.path.join(src_fname, fname)
+        if modtime < before:
+            chooseDest = os.path.join(destination, fname)
             # The shutil.move() method will move the file to the destination directory
             # if the file has been modified within the last 24 hours.
             shutil.move(src_fname, chooseDest)
-
+        # Reurns the modification time of the file.
         return modtime
 
 
