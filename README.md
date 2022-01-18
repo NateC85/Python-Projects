@@ -7,3 +7,5 @@ This repository contains assignments &amp; projects I worked on during my Python
 Here are some basic projects using Python. I used various modules such as tkinter and sqlite3.
 
 ### Projects
+
+* Phonebook
